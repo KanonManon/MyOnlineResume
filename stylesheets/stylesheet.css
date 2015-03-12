@@ -1,0 +1,18 @@
+.stage {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  overflow: hidden;
+  transform: translate3d(-50%, -50%, 0px); 
+  background: black;
+  border: 1px solid white;
+}
+.up_guide {
+  position: absolute;
+  bottom: 0;
+  left: 50%; 
+  opacity:0;
+  transform: translate3d(-50%, -50%, 0px);  
+  -webkit-animation: showup 1.8s ease-out infinite;
+}
+

@@ -1,0 +1,124 @@
+
+@zoomRate: 1;
+@page1_width: 100;
+@page1_height: 100;
+
+.stage {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  overflow: hidden;
+  transform: translate3d(-50%, -50%, 0px); 
+  background: black;
+  border: 1px solid white;
+  height: unit(775*@zoomRate, px);
+  width: unit(436*@zoomRate, px);  
+}
+
+.up_guide {
+  position: absolute;
+  width: unit(36*@zoomRate, px);  
+  height: unit(38*@zoomRate, px);  
+  bottom: 0;
+  left: 50%; 
+  opacity:0;
+  transform: translate3d(-50%, -50%, 0px);  
+  -webkit-animation: showup 1.8s ease-out infinite;
+}
+
+.middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0px);
+  height: unit(@page1_height*@zoomRate, px);
+  width: unit(@page1_width*@zoomRate, px);   
+}
+
+.left {
+  position: absolute;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0px);
+  height: unit(@page1_height*@zoomRate, px);
+  width: unit(@page1_width*@zoomRate, px);   
+}
+
+.fadeIn {
+  -webkit-animation: fadeIn 1s ease forwards;
+}
+
+.fadeOut {
+  -webkit-animation: fadeOut 1s ease forwards;
+}
+
+.slideInLeft {
+  -webkit-animation: slideInLeft 1s ease forwards;
+}
+
+.slideOutLeft {
+  -webkit-animation: slideOutLeft 1s ease forwards;
+}
+
+.slideInRight {
+  -webkit-animation: slideInRight 1s ease forwards;
+}
+
+.slideOutRight {
+  -webkit-animation: slideOutRight 1s ease forwards;
+}
+
+.slideInUp {
+  -webkit-animation: slideInUp 1s ease forwards;
+}
+
+.slideOutUp {
+  -webkit-animation: slideOutUp 1s ease forwards;
+}
+
+.slideInDown {
+  -webkit-animation: slideInDown 1s ease forwards;
+}
+
+.slideOutDown {
+  -webkit-animation: slideOutDown 1s ease forwards;
+}
+
+@-webkit-keyframes showup {
+  0%   {opacity:0; bottom: unit(-10*@zoomRate, px);}
+  30%  {opacity:1; bottom: unit(5*@zoomRate, px);}
+  50%  {opacity:1; bottom: unit(5*@zoomRate, px);}
+  100% {opacity:0; bottom: unit(10*@zoomRate, px);}
+}
+
+@-webkit-keyframes stageOut {
+  0%   {opacity:1;top: 50%;}
+  100% {opacity:0.5;top: -51%;}
+}
+
+@-webkit-keyframes stageBack {
+  0%   {opacity:0.5;top: -51%;}
+  100% {opacity:1;top: 50%;}
+}
+
+@-webkit-keyframes fadeIn {
+  0%   {opacity:0;height:unit(@page1_height*0.2, px);width:unit(@page1_width*0.2, px);}
+  100% {opacity:1;height:unit(@page1_height, px);width:unit(@page1_width, px);}
+}
+
+@-webkit-keyframes fadeOut {
+  0%   {opacity:1;height:unit(@page1_height, px);width:unit(@page1_width, px);}
+  100% {opacity:0;height:unit(@page1_height*0.2, px);width:unit(@page1_width*0.2, px);}
+}
+
+@-webkit-keyframes slideInLeft {
+  0%   {opacity:0;left:-100%;}
+  100% {opacity:1;left:0;}
+}
+
+@-webkit-keyframes slideOutLeft {
+  0%   {opacity:1;left:0;}
+  100% {opacity:0;left:-100%;}
+}
+
+
+
