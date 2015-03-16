@@ -23,7 +23,7 @@ $(function () {
 
 
   window.onresize = adjust;
-  adjust();
+  
 
 
   var startShow = function(){
@@ -170,4 +170,9 @@ $(function () {
   setTimeout(function(){
     $(".viewport_01").addClass("current-stage");
   },1500);
+  
+  setTimeout(function(){
+    adjust();
+  },500); 
+
 });
