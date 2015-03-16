@@ -45,7 +45,17 @@ $(function () {
       $(".edu").removeClass("slideOutBottom").addClass("slideInBottom");
     } else if(self.hasClass("viewport_04")){
       $(".rd").removeClass("slideOutBottom").addClass("slideInBottom");
-    }  
+      $(".desc2010").removeClass("slideOutLeft").addClass("slideInLeft"); 
+    } else if(self.hasClass("viewport_05")){
+      $(".tv1").removeClass("slideOutBottom").addClass("slideInBottom");
+      $(".desc2011").removeClass("slideOutLeft").addClass("slideInLeft"); 
+    } else if(self.hasClass("viewport_06")){
+      $(".tv2").removeClass("slideOutBottom").addClass("slideInBottom");
+      $(".desc2012").removeClass("slideOutLeft").addClass("slideInLeft"); 
+    } else if(self.hasClass("viewport_07")){
+      $(".tv3").removeClass("slideOutBottom").addClass("slideInBottom");
+      $(".desc2013").removeClass("slideOutLeft").addClass("slideInLeft"); 
+    }   
 
   };
 
@@ -63,8 +73,22 @@ $(function () {
       $(".neu").removeClass("slideInLeft").addClass("slideOutLeft");
       $(".edu").removeClass("slideInBottom").addClass("slideOutBottom");
     } else if(self.hasClass("viewport_04")){
-      $(".rd").removeClass("slideInBottom").addClass("slideOutBottom");  
+      $(".rd").removeClass("slideInBottom").addClass("slideOutBottom"); 
+      $(".desc2010").removeClass("slideInLeft").addClass("slideOutLeft");  
+    } else if(self.hasClass("viewport_05")){
+      $(".tv1").removeClass("slideInBottom").addClass("slideOutBottom"); 
+      $(".desc2011").removeClass("slideInLeft").addClass("slideOutLeft");  
+    } else if(self.hasClass("viewport_06")){
+      $(".tv2").removeClass("slideInBottom").addClass("slideOutBottom"); 
+      $(".desc2012").removeClass("slideInLeft").addClass("slideOutLeft");  
+    } else if(self.hasClass("viewport_07")){
+      $(".tv3").removeClass("slideInBottom").addClass("slideOutBottom"); 
+      $(".desc2013").removeClass("slideInLeft").addClass("slideOutLeft");  
     }  
+
+
+
+
   };
        
   var setCurrentStage = function(){
@@ -180,25 +204,27 @@ $(function () {
   function touchMove(event) {
     var touch = event.touches[0];
     endY = (startY - touch.pageY);
+  }
+
+  function touchEnd(event) {
+    if (state) { //key nop
+      return;
+    }    
     if (endY > 0) { //down
       showNext();
     } else {
       showPrev();
     }
   }
-
-  function touchEnd(event) {
-
-
-  }
   
-
   setTimeout(function(){
     $(".viewport_01").addClass("current-stage");
   },1500);
   
   setTimeout(function(){
     adjust();
+    $("#main_content").removeAttr("style");
+    $(".loading").remove();
   },500); 
 
 });
