@@ -166,6 +166,32 @@ $(function () {
         break;
     }
   });
+  
+  var startX, startY, endX, endY;
+  document.getElementById("main_content").addEventListener("touchstart", touchStart, false);
+  document.getElementById("main_content").addEventListener("touchmove", touchMove, false);
+  document.getElementById("main_content").addEventListener("touchend", touchEnd, false);
+
+  function touchStart(event) {
+    var touch = event.touches[0];
+    startY = touch.pageY;
+  }
+
+  function touchMove(event) {
+    var touch = event.touches[0];
+    endY = (startY - touch.pageY);
+    if (endY > 0) { //down
+      showNext();
+    } else {
+      showPrev();
+    }
+  }
+
+  function touchEnd(event) {
+
+
+  }
+  
 
   setTimeout(function(){
     $(".viewport_01").addClass("current-stage");
