@@ -1,133 +1,64 @@
-<!--<!DOCTYPE html>-->
-<!--<html>-->
-  <!--<head>-->
-    <!--<meta charset='utf-8'>-->
-    <!--<meta name="description" content="My online resume : My online resume">-->
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">-->
-    <!--&lt;!&ndash; <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css">-->
-    <!--<link rel="stylesheet" type="text/css" href="stylesheets/animation.css"> &ndash;&gt;-->
-<!--<link rel="stylesheet/less" type="text/css" href="stylesheets/stylesheet.less">-->
-<!--<title>My online resume</title>-->
-<!--</head>-->
-<!--<body style="overflow-x:hidden;overflow-y:hidden">-->
-<!--&lt;!&ndash; MAIN CONTENT &ndash;&gt;-->
-<!--<img class="loading" src="./images/loading.gif" style="width: 100%; left: 50%; top: 50%; -webkit-transform: translate3d(-50%, -50%, 0px); position: absolute;">-->
-<!--<div id="main_content" style="display: none;">-->
-    <!--<div class="viewport_08 stage">-->
-        <!--<div class="desc2014 text">fadadgfdfdsagdgdsfdgagdfa</div>-->
-        <!--<img class="app" src="./images/app.jpg">-->
-    <!--</div>-->
-    <!--<div class="viewport_07 stage">-->
-        <!--<div class="desc2013 text">fadadgfdfdsagdgdsfdgagdfa</div>-->
-        <!--<img class="tv3" src="./images/tv3.jpg">-->
-    <!--</div>-->
-    <!--<div class="viewport_06 stage">-->
-        <!--<div class="desc2012 text">fadadgfdfdsagdgdsfdgagdfa</div>-->
-        <!--<img class="tv2" src="./images/tv2.jpg">-->
-    <!--</div>-->
-    <!--<div class="viewport_05 stage">-->
-        <!--<div class="desc2011 text">fadadgfdfdsagdgdsfdgagdfa</div>-->
-        <!--<img class="tv1" src="./images/tv1.jpg">-->
-    <!--</div>-->
-    <!--<div class="viewport_04 stage">-->
-        <!--<div class="desc2010 text">fadadgfdfdsagdgdsfdgagdfa</div>-->
-        <!--<img class="rd" src="./images/rd.png">-->
-    <!--</div>-->
-    <!--<div class="viewport_03 stage">-->
-        <!--<img class="career" src="./images/career.png">-->
-        <!--<img class="neu" src="./images/neu.jpg">-->
-        <!--<img class="edu" src="./images/edu.png">-->
-    <!--</div>-->
-    <!--<div class="viewport_02 stage">-->
-        <!--<img class="me" src="./images/me.png">-->
-        <!--<img class="no0" src="./images/about0.png">-->
-        <!--<img class="about no1" src="./images/about1.png">-->
-        <!--<img class="about no2" src="./images/about2.png">-->
-        <!--<img class="about no3" src="./images/about3.png">-->
-        <!--<img class="about no4" src="./images/about4.png">-->
-        <!--<img class="about no5" src="./images/about5.png">-->
-    <!--</div>-->
-    <!--<div class="viewport_01 stage">-->
-        <!--<img class="title" src="./images/title.png">-->
-        <!--<img class="author " src="./images/author.png">>-->
-        <!--<img class="ball middle" src="./images/ball.png">-->
-        <!--<img class="logo middle" src="./images/logo.png">-->
-        <!--<img class="up_guide" src="./images/up.png">-->
-    <!--</div>-->
-<!--</div>-->
-<!--<script src="javascripts/jquery.min.js"></script>-->
-<!--<script src="javascripts/less.min.js"></script>-->
-<!--<script src="javascripts/config.js"></script>-->
-<!--&lt;!&ndash;<script src="javascripts/main.js"></script>&ndash;&gt;-->
-<!--</body>-->
-<!--</html>-->
-
-
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="msapplication-tap-highlight" content="no">
-
-    <title>南方电网招聘App下载</title>
-    <script type="text/javascript">
-        function isWeiXin() {
-            var ua = window.navigator.userAgent.toLowerCase();
-            if (ua.match(/MicroMessenger/i) == 'micromessenger') {
-                return true;
-            } else {
-                return false;
-            }
-        }
-
-        function getQueryString(name) {
-            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-            var r = window.location.search.substr(1).match(reg);
-            if (r != null) return unescape(r[2]);
-            return null;
-        }
-
-        // 获取终端的相关信息
-        var Terminal = {
-            // 辨别移动终端类型
-            platform: function () {
-                var u = navigator.userAgent, app = navigator.appVersion;
-                return {
-                    // android终端或者uc浏览器
-                    android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1,
-                    // 是否为iPhone或者QQHD浏览器
-                    iPhone: u.indexOf('iPhone') > -1,
-                    // 是否iPad
-                    iPad: u.indexOf('iPad') > -1
-                };
-            }(),
-            // 辨别移动终端的语言：zh-cn、en-us、ko-kr、ja-jp...
-            language: (navigator.browserLanguage || navigator.language).toLowerCase()
-        };
-
-        // 根据不同的终端，跳转到不同的地址
-        var env = getQueryString('env') || "prod";
-        //Android
-        var devAndroidUrl = 'http://120.78.83.127/nexus/repository/Recruit-app-repo-release/RecruitApp/android-armv7-debug/latest/android-armv7-debug-latest.apk';
-        //todo
-        var proAndroidUrl = 'http://120.78.83.127/nexus/repository/Recruit-app-repo-release/RecruitApp/android-armv7-debug/latest/android-armv7.apk';
-        //iOS
-        //todo
-        var appstoreLink = 'https://itunes.apple.com/cn';
-
-        var theUrl = proAndroidUrl;
-        if (Terminal.platform.android) {
-            theUrl = env == "prod" ? proAndroidUrl : devAndroidUrl;
-        } else if (Terminal.platform.iPhone) {
-            theUrl = appstoreLink;
-        }
-        location.href = theUrl;
-    </script>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta name="description" content="My online resume : My online resume">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/animation.css"> -->
+<link rel="stylesheet/less" type="text/css" href="stylesheets/stylesheet.less">
+<title>My online resume</title>
 </head>
-<body>
+<body style="overflow-x:hidden;overflow-y:hidden">
+<!-- MAIN CONTENT -->
+<img class="loading" src="./images/loading.gif" style="width: 100%; left: 50%; top: 50%; -webkit-transform: translate3d(-50%, -50%, 0px); position: absolute;">
+<div id="main_content" style="display: none;">
+    <div class="viewport_08 stage">
+        <div class="desc2014 text">fadadgfdfdsagdgdsfdgagdfa</div>
+        <img class="app" src="./images/app.jpg">
+    </div>
+    <div class="viewport_07 stage">
+        <div class="desc2013 text">fadadgfdfdsagdgdsfdgagdfa</div>
+        <img class="tv3" src="./images/tv3.jpg">
+    </div>
+    <div class="viewport_06 stage">
+        <div class="desc2012 text">fadadgfdfdsagdgdsfdgagdfa</div>
+        <img class="tv2" src="./images/tv2.jpg">
+    </div>
+    <div class="viewport_05 stage">
+        <div class="desc2011 text">fadadgfdfdsagdgdsfdgagdfa</div>
+        <img class="tv1" src="./images/tv1.jpg">
+    </div>
+    <div class="viewport_04 stage">
+        <div class="desc2010 text">fadadgfdfdsagdgdsfdgagdfa</div>
+        <img class="rd" src="./images/rd.png">
+    </div>
+    <div class="viewport_03 stage">
+        <img class="career" src="./images/career.png">
+        <img class="neu" src="./images/neu.jpg">
+        <img class="edu" src="./images/edu.png">
+    </div>
+    <div class="viewport_02 stage">
+        <img class="me" src="./images/me.png">
+        <img class="no0" src="./images/about0.png">
+        <img class="about no1" src="./images/about1.png">
+        <img class="about no2" src="./images/about2.png">
+        <img class="about no3" src="./images/about3.png">
+        <img class="about no4" src="./images/about4.png">
+        <img class="about no5" src="./images/about5.png">
+    </div>
+    <div class="viewport_01 stage">
+        <img class="title" src="./images/title.png">
+        <img class="author " src="./images/author.png">>
+        <img class="ball middle" src="./images/ball.png">
+        <img class="logo middle" src="./images/logo.png">
+        <img class="up_guide" src="./images/up.png">
+    </div>
+</div>
+<script src="javascripts/jquery.min.js"></script>
+<script src="javascripts/less.min.js"></script>
+<script src="javascripts/config.js"></script>
+<!--<script src="javascripts/main.js"></script>-->
 </body>
 </html>
+
